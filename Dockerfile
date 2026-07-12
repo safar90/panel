@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-install-project --no-dev
 ADD . /build
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev
+  
 
 
 FROM python:$PYTHON_VERSION-slim-bookworm
