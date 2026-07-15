@@ -1,4 +1,3 @@
-cat > main.py << 'EOF'
 import ipaddress
 import os
 import socket
@@ -60,8 +59,8 @@ def check_and_modify_ip(ip_address: str) -> str:
         else:
             return "localhost"
 
-    except (ValueError, socket.gaierror):
-      return "localhost"  
+    except ValueError, socket.gaierror:
+        return "localhost"
 
 
 def validate_cert_and_key(cert_file_path, key_file_path, ca_type: str = "public"):
@@ -165,4 +164,3 @@ Then, navigate to {click.style(f"http://{ip}:{server_settings.port}", bold=True)
         )
     except FileNotFoundError:  # to prevent error on removing unix sock
         pass
-EOF
