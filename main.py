@@ -1,3 +1,4 @@
+cat > main.py << 'EOF'
 import ipaddress
 import os
 import socket
@@ -164,3 +165,4 @@ Then, navigate to {click.style(f"http://{ip}:{server_settings.port}", bold=True)
         )
     except FileNotFoundError:  # to prevent error on removing unix sock
         pass
+EOF
