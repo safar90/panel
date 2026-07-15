@@ -120,7 +120,7 @@ if __name__ == "__main__":
         if server_settings.uds:
             bind_args["uds"] = server_settings.uds
         else:
-            ip = check_and_modify_ip(server_setting.host)
+            ip = check_and_modify_ip(server_settings.host)
 
             logger.warning(f"""
 {click.style("IMPORTANT!", blink=True, bold=True, fg="yellow")}
