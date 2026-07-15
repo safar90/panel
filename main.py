@@ -59,8 +59,8 @@ def check_and_modify_ip(ip_address: str) -> str:
         else:
             return "localhost"
 
-    except ValueError, socket.gaierror:
-        return "localhost"
+    except (ValueError, socket.gaierror):
+        
 
 
 def validate_cert_and_key(cert_file_path, key_file_path, ca_type: str = "public"):
@@ -120,7 +120,7 @@ if __name__ == "__main__":
         if server_settings.uds:
             bind_args["uds"] = server_settings.uds
         else:
-            ip = check_and_modify_ip(server_settings.host)
+            ip = "0.0.0.0"
 
             logger.warning(f"""
 {click.style("IMPORTANT!", blink=True, bold=True, fg="yellow")}
