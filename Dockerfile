@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     libc6-dev \
     curl \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Bun
@@ -32,6 +33,7 @@ ENV PATH="/code/.venv/bin:/root/.bun/bin:${PATH}"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Bun in runtime image
